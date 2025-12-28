@@ -95,6 +95,13 @@ const Success: React.FC<Props> = ({ userData, onReset }) => {
                 <span className="font-extrabold text-rose-500 text-xs">{userData.paymentMethod}</span>
               </div>
 
+              {userData.promoCode && (
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-400 text-[9px] font-black uppercase tracking-[0.2em]">Promo</span>
+                  <span className="font-extrabold text-emerald-500 text-xs">{userData.promoCode} (-{userData.discountAmount})</span>
+                </div>
+              )}
+
               <div className="pt-4 border-t-2 border-dashed border-slate-200 flex flex-col items-center py-2">
                 <p className="text-4xl font-black text-slate-900 font-display tracking-tighter">{userData.amount}</p>
                 <p className="text-[9px] text-rose-500 font-black uppercase tracking-[0.3em] mt-2">Verified {userData.currencyType.split(' ')[0]}</p>

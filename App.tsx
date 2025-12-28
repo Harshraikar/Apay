@@ -188,7 +188,10 @@ const App: React.FC = () => {
               <NumberEntry selectedMerchant={userData} onNext={(num) => { updateUserData({ phoneNumber: num }); nextStep(); }} />
             )}
             {step === AppStep.AMOUNT_ENTRY && (
-              <AmountEntry onNext={(amount, currencyType) => { updateUserData({ amount, currencyType }); nextStep(); }} />
+              <AmountEntry onNext={(amount, currencyType, discount, code) => { 
+                updateUserData({ amount, currencyType, discountAmount: discount, promoCode: code }); 
+                nextStep(); 
+              }} />
             )}
             {step === AppStep.METHOD_SELECTION && (
               <MethodSelection onNext={(paymentMethod) => { updateUserData({ paymentMethod }); nextStep(); }} />

@@ -21,4 +21,6 @@ export interface UserData {
   course?: string;
   merchantName: string;
   merchantId: string;
+  discountAmount?: string;
+  promoCode?: string;
 }
